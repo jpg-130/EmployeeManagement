@@ -6,8 +6,6 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
-import com.demo.management.entity.Address;
-
 public class EmployeeDTO {
 
 	@NotNull
@@ -24,7 +22,7 @@ public class EmployeeDTO {
 	@Pattern(regexp = "[a-zA-Z0-9._]+@[a-zA-Z0-9._]{2,}\\.[a-zA-Z][a-zA-Z.]+")
 	private String employeeEmail;
 
-	private Set<Address> addresses;
+	private Set<AddressDTO> addressDTOs;
 
 	public Integer getEmployeeId() {
 		return employeeId;
@@ -58,17 +56,18 @@ public class EmployeeDTO {
 		this.employeeEmail = employeeEmail;
 	}
 
-	public Set<Address> getAddresses() {
-		return addresses;
+	public Set<AddressDTO> getAddressDTOs() {
+		return addressDTOs;
 	}
 
-	public void setAddresses(Set<Address> addresses) {
-		this.addresses = addresses;
+	public void setAddressDTOs(Set<AddressDTO> addressDTOs) {
+		this.addressDTOs = addressDTOs;
 	}
 
 	@Override
 	public String toString() {
 		return "EmployeeDTO [employeeId=" + employeeId + ", firstName=" + firstName + ", lastName=" + lastName
-				+ ", employeeEmail=" + employeeEmail + ", addresses=" + addresses + "]";
+				+ ", employeeEmail=" + employeeEmail + ", addressDTOs=" + addressDTOs + "]";
 	}
+
 }
