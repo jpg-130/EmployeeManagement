@@ -1,0 +1,74 @@
+package com.demo.management.dto;
+
+import java.util.Set;
+
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+
+import com.demo.management.entity.Address;
+
+public class EmployeeDTO {
+
+	@NotNull
+	@Pattern(regexp = "[0-9]{5,10}")
+	private Integer employeeId;
+
+	@NotBlank
+	private String firstName;
+
+	@NotBlank
+	private String lastName;
+
+	@NotBlank
+	@Pattern(regexp = "[a-zA-Z0-9._]+@[a-zA-Z0-9._]{2,}\\.[a-zA-Z][a-zA-Z.]+")
+	private String employeeEmail;
+
+	private Set<Address> addresses;
+
+	public Integer getEmployeeId() {
+		return employeeId;
+	}
+
+	public void setEmployeeId(Integer employeeId) {
+		this.employeeId = employeeId;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getEmployeeEmail() {
+		return employeeEmail;
+	}
+
+	public void setEmployeeEmail(String employeeEmail) {
+		this.employeeEmail = employeeEmail;
+	}
+
+	public Set<Address> getAddresses() {
+		return addresses;
+	}
+
+	public void setAddresses(Set<Address> addresses) {
+		this.addresses = addresses;
+	}
+
+	@Override
+	public String toString() {
+		return "EmployeeDTO [employeeId=" + employeeId + ", firstName=" + firstName + ", lastName=" + lastName
+				+ ", employeeEmail=" + employeeEmail + ", addresses=" + addresses + "]";
+	}
+}
